@@ -1,0 +1,60 @@
+name: Auto publish
+
+on:
+  push:
+    paths:
+      - 'info.json' # Triggers only if the mod info file is updated
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: get version
+      id: version
+      uses: notiz-dev/github-action-json-property@release
+      with:
+        path: 'info.json'
+        prop_path: 'version'
+    - name: get factorio_version
+      id: factorio_version
+      uses: notiz-dev/github-action-json-property@release
+      with:
+        path: 'info.json'
+        prop_path: 'factorio_version'
+    - name: get mod name
+      id: mod_name
+      uses: notiz-dev/github-action-json-property@release
+      with:
+        path: 'info.json'
+        prop_path: 'name'
+    - uses: leafo/gh-actions-lua@v8
+      with:
+        luaVersion: "5.2.1"
+    - uses: leafo/gh-actions-luarocks@v4
+      with:
+        luarocksVersion: "3.7.0"
+    - name: install candran
+      run: luarocks install candran
+    - name: install luaformatter
+      run: luarocks install --server=https://luarocks.org/dev luaformatter
+    - name: install 7z, jq
+      run: sudo apt install p7zip-full jq -y
+    - name: Candran to Lua [1/2]
+      run: bash ./.scripts/CandranToLua.sh
+    - name: Candran to Lua [2/2]
+      run: bash ./.scripts/CandranToLua.sh
+    - name: Zip mod
+      run: bash ./.scripts/zip_mod.sh
+    - uses: TGNThump/factorio-publish-mod-action@v1
+      with:
+        mod_portal_username: ${{ secrets.FACTORIO_USER }}
+        mod_portal_password: ${{ secrets.FACTORIO_PASSWORD }}
+        mod_name: ${{steps.mod_name.outputs.prop}}
+        asset_path: ./${{steps.mod_name.outputs.prop}}_${{steps.version.outputs.prop}}.zip
+        asset_name: ${{steps.mod_name.outputs.prop}}_${{steps.version.outputs.prop}}.zip

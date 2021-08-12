@@ -1,0 +1,11 @@
+{
+	"name": "candran-example",
+	"version": "0.0.2",
+	"factorio_version": "1.1",
+	"title": "Candran example",
+	"author": "Put your nickname",
+	"contact": "Put your contacts",
+	"homepage": "Put a link",
+	"description": "See locale/en",
+	"dependencies": []
+}
