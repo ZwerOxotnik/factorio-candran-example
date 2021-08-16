@@ -93,7 +93,7 @@ luaver use-luarocks 3.7.0
 luaver set-default-luarocks 3.7.0
 ```
 
-Shell [scripts](./.scripts) depends on [git], [7z], [jq], [LuaFormatter], [candran].
+Shell [scripts](./.scripts) depends on [git], [7z], [jq], [candran].
 
 Installation of some dependencies on Debian and Ubuntu:
 
@@ -101,10 +101,9 @@ Installation of some dependencies on Debian and Ubuntu:
 sudo apt install p7zip-full jq git -y
 ```
 
-Installation of [candran] and [LuaFormatter]:
+Installation of [candran]:
 
 ```shell
-luarocks install --server=https://luarocks.org/dev luaformatter
 luarocks install candran
 ```
 
@@ -165,7 +164,6 @@ SOFTWARE.
 [7z]: https://www.7-zip.org/download.html
 [luaver]: https://github.com/DhavalKapil/luaver
 [candran]: https://github.com/Reuh/candran
-[LuaFormatter]: https://github.com/Koihik/LuaFormatter
 [luarocks]: https://luarocks.org/
 [discord]: https://discord.gg/YyJVUCa
 [vscode]: https://code.visualstudio.com/

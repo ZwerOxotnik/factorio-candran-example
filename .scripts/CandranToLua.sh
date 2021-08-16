@@ -1,6 +1,5 @@
 #!/bin/bash
-
-# Compile *.can files to *.lua files and format them
+### Compile *.can files to *.lua files and format them
 
 
 format=*.can
@@ -13,11 +12,6 @@ do
  else
     ## Get the file name
     echo "path $path"
-    canc $path
-    lua_file="${path%.can}.lua"
-    lua-format "$lua_file" > __reserve.lua
-    lua-format __reserve.lua > "$lua_file"
+    canc -t "lua52" --indentation "	" $path
  fi
 done
-rm __reserve.lua
-

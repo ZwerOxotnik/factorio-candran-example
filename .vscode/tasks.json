@@ -7,10 +7,10 @@
 			"problemMatcher": [],
 			"command": "bash",
 			"args": [".scripts/zip_mod.sh"],
-      "group": "build",
-      "presentation": {
+			"group": "build",
+			"presentation": {
 				"reveal": "silent",
-      }
+			}
 		},
 		{
 			"label": "Candran to Lua",
@@ -18,7 +18,26 @@
 			"problemMatcher": [],
 			"command": "bash",
 			"args": [".scripts/CandranToLua.sh"],
-      "group": "build"
+			"group": "build"
+		},
+		{
+			"label": "Build html",
+			"type": "shell",
+			"problemMatcher": [],
+			"command": "sphinx-build -b html predocs docs/_build/html",
+			"args": [""],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent",
+			}
+		},
+		{
+			"label": "Handle sounds",
+			"type": "shell",
+			"problemMatcher": [],
+			"command": "bash",
+			"args": [".scripts/handle_sounds.sh"],
+			"group": "build"
 		}
 	]
 }

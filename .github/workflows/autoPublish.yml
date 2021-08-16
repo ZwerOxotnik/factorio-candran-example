@@ -41,8 +41,6 @@ jobs:
         luarocksVersion: "3.7.0"
     - name: install candran
       run: luarocks install candran
-    - name: install luaformatter
-      run: luarocks install --server=https://luarocks.org/dev luaformatter
     - name: install 7z, jq
       run: sudo apt install p7zip-full jq -y
     - name: Candran to Lua [1/2]

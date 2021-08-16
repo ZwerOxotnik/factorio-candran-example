@@ -1,6 +1,10 @@
-script.on_event(defines.events.on_player_joined_game, function(event)
-	local player = game.get_player(event.player_index)
-	if not (player and player.valid) then return end
+#local DEBUG = true
 
-	player.print("Candran example works fine")
-end)
+#if DEBUG then
+	script.on_event(defines.events.on_player_joined_game, function(event)
+		local player = game.get_player(event.player_index)
+		if not (player and player.valid) then return end
+
+		player.print("Candran example works fine")
+	end)
+#end
