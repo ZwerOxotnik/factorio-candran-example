@@ -4,8 +4,15 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - name: install candran
+        run: luarocks install candran
+      - name: Candran to Lua [1/2]
+        run: bash ./.scripts/CandranToLua.sh
+      - name: Candran to Lua [2/2]
+        run: bash ./.scripts/CandranToLua.sh
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
       - name: lint
         uses: Roang-zero1/factorio-mod-luacheck@master
-        with:
-          luacheckrc_url: https://github.com/Nexela/Factorio-luacheckrc/raw/master/.luacheckrc
