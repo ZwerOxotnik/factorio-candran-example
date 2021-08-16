@@ -22,3 +22,5 @@ jobs:
         run: bash ./.scripts/CandranToLua.sh
       - name: lint
         uses: Roang-zero1/factorio-mod-luacheck@master
+        with:
+          luacheckrc_url: https://github.com/Nexela/Factorio-luacheckrc/raw/master/.luacheckrc
