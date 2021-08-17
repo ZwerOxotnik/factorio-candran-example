@@ -10,8 +10,6 @@ do
  then
     echo "No Files"
  else
-    ## Get the file name
-    echo "path $path"
     canc -t "lua52" --indentation "	" $path
  fi
 done
