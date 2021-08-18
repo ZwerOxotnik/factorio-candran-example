@@ -21,6 +21,4 @@ jobs:
       - name: Candran to Lua [2/2]
         run: bash ./.scripts/CandranToLua.sh
       - name: lint
-        uses: Roang-zero1/factorio-mod-luacheck@master
-        with:
-          luacheckrc_url: https://github.com/Nexela/Factorio-luacheckrc/raw/master/.luacheckrc
+        run: luacheck . --exclude-files .install .luarocks
