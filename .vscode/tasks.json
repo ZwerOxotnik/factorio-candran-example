@@ -27,6 +27,14 @@
 			"command": "bash",
 			"args": [".scripts/handle_sounds.sh"],
 			"group": "build"
+		},
+		{
+			"label": "Luacheck",
+			"type": "shell",
+			"problemMatcher": [],
+			"command": "luacheck .",
+			"args": [""],
+			"group": "test"
 		}
 	]
 }
