@@ -4,7 +4,6 @@
 		{
 			"label": "zip mod",
 			"type": "shell",
-			"problemMatcher": [],
 			"command": "bash",
 			"args": [".scripts/zip_mod.sh"],
 			"group": "build",
@@ -15,7 +14,6 @@
 		{
 			"label": "Candran to Lua",
 			"type": "shell",
-			"problemMatcher": [],
 			"command": "bash",
 			"args": [".scripts/CandranToLua.sh"],
 			"group": "build"
@@ -23,17 +21,15 @@
 		{
 			"label": "Handle sounds",
 			"type": "shell",
-			"problemMatcher": [],
 			"command": "bash",
 			"args": [".scripts/handle_sounds.sh"],
 			"group": "build"
 		},
 		{
-			"label": "Luacheck",
+			"label": "Cancheck",
 			"type": "shell",
-			"problemMatcher": [],
-			"command": "luacheck .",
-			"args": [""],
+			"command": "cancheck",
+			"args": ["${file}"],
 			"group": "test"
 		}
 	]
