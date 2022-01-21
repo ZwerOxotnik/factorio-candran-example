@@ -80,16 +80,7 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-Installation of [luaver]:
-
-```shell
-git clone https://github.com/DhavalKapil/luaver
-cd luaver
-. ./install.sh
-. ~/.bashrc
-```
-
-Manage versions:
+Install [luaver] and then manage versions:
 
 ```shell
 luaver install 5.2.1
