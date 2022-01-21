@@ -70,7 +70,14 @@ I recommend to install [luaver] for managing versions of Lua and [luarocks].
 Installation of dependencies on Debian and Ubuntu:
 
 ```shell
-sudo apt-get install linux-headers-generic libreadline-dev build-essential git dkms -y
+sudo apt-get install linux-headers-generic libreadline-dev build-essential git unzip make dkms -y
+```
+
+Don't forget to use:
+
+```shell
+sudo apt-get update
+sudo apt-get upgrade
 ```
 
 Installation of [luaver]:
