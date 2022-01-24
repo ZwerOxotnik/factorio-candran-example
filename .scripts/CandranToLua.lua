@@ -30,17 +30,11 @@ local function preprocess_file(source, destination)
 
 	-- Runs preprocess
 	print("Compiling " .. source .. " in " .. destination)
-	local compiled, err = candran.preprocess(contents, options)
+	local compiled, err = candran.make(contents, options)
 	if not compiled then
 		print(err)
 		return
 	end
-
-	-- Removes unnecessary code
-	local f_chunkname = string.gsub(options.chunkname, "%-", "%%-")
-	f_chunkname = string.gsub(f_chunkname, "%.", "%%.")
-	local pattern = options.newline .. " %-%- " .. f_chunkname .. ":%d+"
-	compiled = string.gsub(compiled, pattern, options.newline)
 
 	-- Writes code
 	f = io.open(destination, "w+")
