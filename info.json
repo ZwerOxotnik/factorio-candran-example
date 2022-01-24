@@ -7,5 +7,5 @@
 	"contact": "Put your contacts",
 	"homepage": "Put a link here",
 	"description": "See locale/en",
-	"dependencies": []
+	"dependencies": ["base"]
 }
