@@ -15,7 +15,9 @@ jobs:
         with:
           luarocksVersion: "3.7.0"
       - name: install candran
-        run: luarocks install candran lpeg
+        run: luarocks install candran
+      - name: install lpeg
+        run: luarocks install lpeg
       - name: Candran to Lua [1/2]
         run: bash ./.scripts/CandranToLua.sh
       - name: Candran to Lua [2/2]

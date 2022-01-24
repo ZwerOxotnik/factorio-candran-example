@@ -100,7 +100,8 @@ sudo apt install p7zip-full jq git -y
 Installation of [candran] and lpeg as a component for [lpeg.re]:
 
 ```shell
-luarocks install candran lpeg
+luarocks install candran
+luarocks install lpeg
 ```
 
 Notes

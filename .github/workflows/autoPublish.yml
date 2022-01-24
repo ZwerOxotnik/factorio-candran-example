@@ -40,7 +40,9 @@ jobs:
       with:
         luarocksVersion: "3.7.0"
     - name: install candran
-      run: luarocks install candran lpeg
+      run: luarocks install candran
+    - name: install lpeg
+      run: luarocks install lpeg
     - name: install 7z, jq
       run: sudo apt install p7zip-full jq -y
     - name: Candran to Lua [1/2]
