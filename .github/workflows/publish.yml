@@ -1,14 +1,11 @@
-name: Auto publish
-
 on:
   push:
-    paths:
-      - 'info.json' # Triggers only if the mod info file is updated
     branches:
       - main
 
+name: Publish
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository and submodules
@@ -43,10 +40,8 @@ jobs:
       run: luarocks install candran lpeg
     - name: install 7z, jq
       run: sudo apt install p7zip-full jq -y
-    - name: Candran to Lua [1/2]
-      run: bash ./.scripts/CandranToLua.sh
-    - name: Candran to Lua [2/2]
-      run: bash .scripts/CandranToLua.sh && lua .scripts/CandranToLua.lua
+    - name: Candran to Lua
+      run: lua ./.scripts/CandranToLua.lua
     - name: Zip mod
       run: bash ./.scripts/zip_mod.sh
     - uses: TGNThump/factorio-publish-mod-action@v1
@@ -56,3 +51,12 @@ jobs:
         mod_name: ${{steps.mod_name.outputs.prop}}
         asset_path: ./${{steps.mod_name.outputs.prop}}_${{steps.version.outputs.prop}}.zip
         asset_name: ${{steps.mod_name.outputs.prop}}_${{steps.version.outputs.prop}}.zip
+    - uses: marvinpinto/action-automatic-releases@latest
+      id: aar
+      with:
+        automatic_release_tag: "${{steps.version.outputs.prop}}"
+        title: "For factorio ${{steps.factorio_version.outputs.prop}}"
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        prerelease: false
+        files: |
+          ./${{steps.mod_name.outputs.prop}}_${{steps.version.outputs.prop}}.zip

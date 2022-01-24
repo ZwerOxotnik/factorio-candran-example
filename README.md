@@ -47,14 +47,12 @@
   align="right"
 /> -->
 
-Candran example
------------------------
+Factorio + Candran example
+--------------------------
 
 This is an experimental example mod to make possible development with [candran] together with other stuff as easy as possible.
 
-Currently, it's not so "smooth", but you can develop in [vscode] + [Atom]
-
-I didn't find support of [candran] for [vscode]. So I use https://atom.io/packages/language-candran.
+Currently, it's not so "smooth", but you can develop in [vscode].
 
 Check another example without [candran]: https://github.com/ZwerOxotnik/factorio-example-mod
 
@@ -83,9 +81,9 @@ sudo apt-get upgrade
 Install [luaver] and then manage versions:
 
 ```shell
-luaver install 5.2.1
-luaver use 5.2.1
-luaver set-default 5.2.1
+luaver install 5.4.3
+luaver use 5.4.3
+luaver set-default 5.4.3
 luaver install-luarocks 3.7.0
 luaver use-luarocks 3.7.0
 luaver set-default-luarocks 3.7.0
@@ -99,11 +97,18 @@ Installation of some dependencies on Debian and Ubuntu:
 sudo apt install p7zip-full jq git -y
 ```
 
-Installation of [candran]:
+Installation of [candran] and lpeg as a component for [lpeg.re]:
 
 ```shell
-luarocks install candran
+luarocks install candran lpeg
 ```
+
+Notes
+-----
+
+[example.can](./example.can) works slightly differently and uses `--#` instead of `#` for [candran] to support some interactions with Visual Studio Code.
+
+Some additional information you can find on: https://github.com/ZwerOxotnik/factorio-example-mod
 
 ‼️ Important Links (Translations, Discord Support)
 ---------------------------------------------------------------
@@ -133,7 +138,7 @@ License
 
 I'm interested in distributing code as freely as possible.
 
-Copyright (c) 2021 ZwerOxotnik <zweroxotnik@gmail.com>
+Copyright (c) 2021-2022 ZwerOxotnik <zweroxotnik@gmail.com>
 
 Licensed under the [MIT licence](https://tldrlegal.com/license/mit-license).
 
@@ -161,6 +166,7 @@ SOFTWARE.
 [jq]: https://stedolan.github.io/jq/download/
 [7z]: https://www.7-zip.org/download.html
 [luaver]: https://github.com/DhavalKapil/luaver
+[lpeg.re]: http://www.inf.puc-rio.br/~roberto/lpeg/re.html
 [candran]: https://github.com/Reuh/candran
 [luarocks]: https://luarocks.org/
 [discord]: https://discord.gg/YyJVUCa

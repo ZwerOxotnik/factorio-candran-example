@@ -10,15 +10,17 @@ jobs:
           submodules: recursive
       - uses: leafo/gh-actions-lua@v8
         with:
-          luaVersion: "5.2.1"
+          luaVersion: "5.4.3"
       - uses: leafo/gh-actions-luarocks@v4
         with:
           luarocksVersion: "3.7.0"
       - name: install candran
-        run: luarocks install candran
+        run: luarocks install candran lpeg
       - name: Candran to Lua [1/2]
         run: bash ./.scripts/CandranToLua.sh
       - name: Candran to Lua [2/2]
-        run: bash ./.scripts/CandranToLua.sh
+        run: bash .scripts/CandranToLua.sh && lua .scripts/CandranToLua.lua
       - name: lint
-        run: luacheck . --exclude-files .install .luarocks
+        uses: Roang-zero1/factorio-mod-luacheck@master
+        with:
+          luacheckrc_url: https://github.com/Nexela/Factorio-luacheckrc/raw/master/.luacheckrc

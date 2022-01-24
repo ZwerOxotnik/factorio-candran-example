@@ -14,8 +14,7 @@
 		{
 			"label": "Candran to Lua",
 			"type": "shell",
-			"command": "bash",
-			"args": [".scripts/CandranToLua.sh"],
+			"command": "bash .scripts/CandranToLua.sh && lua .scripts/CandranToLua.lua",
 			"group": "build"
 		},
 		{
