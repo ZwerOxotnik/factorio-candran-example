@@ -56,7 +56,7 @@ jobs:
         mod_portal_username: ${{ secrets.FACTORIO_USER }}
         mod_portal_password: ${{ secrets.FACTORIO_PASSWORD }}
         mod_name: ${{steps.mod_name.outputs.prop}}
-        asset_path: ./
+        asset_path: ./${{steps.mod_name.outputs.prop}}_${{steps.version.outputs.prop}}.zip
         asset_name: ${{steps.mod_name.outputs.prop}}_${{steps.version.outputs.prop}}.zip
     - uses: marvinpinto/action-automatic-releases@latest
       id: aar
