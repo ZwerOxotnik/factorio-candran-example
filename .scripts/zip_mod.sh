@@ -15,5 +15,6 @@ mod_ver=`cat info.json|jq -r .version`
 
 ### Prepare zip for Factorio native use and mod portal
 name="${mod_name}_$mod_ver"
+git clean -xdf
 cd ..
 7z a -xr'!.*' "$REPOSITORY/$name.zip" "$REPOSITORY"
