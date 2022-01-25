@@ -58,6 +58,11 @@
 	],
 	"Lua.intelliSense.searchDepth": 3,
 	"Lua.diagnostics.workspaceDelay": 50,
+	"Lua.diagnostics.disable": [
+		"lowercase-global",
+		"undefined-doc-name",
+		"undefined-doc-class"
+	],
 	"git.autofetch": "all",
 	"markdownlint.config": {
 		"MD033": false,
