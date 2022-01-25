@@ -67,4 +67,8 @@
 	"restructuredtext.builtDocumentationPath" : "${workspaceFolder}/docs/_build/html",
 	"restructuredtext.updateOnTextChanged"    : "false",
 	"restructuredtext.updateDelay"            : 1000,
+	"triggerTaskOnSave.tasks": {
+		"Candran to Lua": ["*.can"],
+		"Luacheck": ["*.lua"]
+	}
 }
