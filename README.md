@@ -81,14 +81,14 @@ sudo apt-get upgrade
 Install [luaver] and then manage versions:
 
 ```shell
-luaver install 5.4.3
-luaver use 5.4.3
-luaver set-default 5.4.3
+luaver install 5.4.6
+luaver use 5.4.6
+luaver set-default 5.4.6
 luaver install-luarocks 3.9.2
 luaver use-luarocks 3.9.2
 luaver set-default-luarocks 3.9.2
 ```
-		
+
 (If you have problems with wget, read this: https://forums.linuxmint.com/viewtopic.php?t=349438 )
 
 Shell [scripts](./.scripts) depends on [git], [7z], [jq], [candran].
