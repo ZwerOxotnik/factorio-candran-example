@@ -106,7 +106,7 @@ luarocks install candran
 luarocks install lpeg
 ```
 
-If your Visual Studio Code terminal/tasks doesn't work properly, then write this into your `settings.json` as a user profile. (tested on Linux Mint)
+If your Visual Studio Code terminal/tasks doesn't work properly, then write this into your user profile (`settings.json`). (tested on Linux Mint)
 ```json
 "terminal.integrated.defaultProfile.linux": "bash",
 "terminal.integrated.profiles.linux": {
