@@ -106,6 +106,21 @@ luarocks install candran
 luarocks install lpeg
 ```
 
+If your Visual Studio Code terminal/tasks doesn't work properly, then write this into your `settings.json` as a user profile. (tested on Linux Mint)
+```json
+"terminal.integrated.defaultProfile.linux": "bash",
+"terminal.integrated.profiles.linux": {
+	"bash": {
+	  "path": "bash",
+	  "icon": "terminal-bash",
+	  "args": ["-i"]
+	}
+},
+"terminal.integrated.env.linux": {
+	"LD_PRELOAD": null,
+},
+```
+
 Notes
 -----
 
