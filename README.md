@@ -121,6 +121,13 @@ If your Visual Studio Code terminal/tasks doesn't work properly, then write this
 },
 ```
 
+If you still have some issues with lua on Linux, then you could try:
+
+```sh
+sudo apt install ssh && sudo apt autoremove && sudo apt install lua5.4 luarocks
+```
+(I don't know why it helps in some distros)
+
 Notes
 -----
 
