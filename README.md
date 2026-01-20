@@ -63,7 +63,7 @@ Check another example without [candran]: https://github.com/ZwerOxotnik/factorio
 Requirements
 ------------
 
-I recommend to install [luaver] (use alternatives forks/ways if it's outdated) for managing versions of Lua and [luarocks].
+I recommend to install [luaver] (use alternative forks/ways if it's outdated) for managing versions of Lua and [luarocks].
 
 Installation of dependencies on Debian and Ubuntu:
 
